@@ -3,7 +3,7 @@
 $ npm install
 ```
 
-## How to run in your local environment
+## How to run on your local environment
 ```
 $ npm run local
 ```

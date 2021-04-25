@@ -1,18 +1,14 @@
+const axios = require('axios');
+
 export const loginApi = ({
   username,
   password
 }: ReqLogin): Promise<ResLoginApi> =>
   new Promise((resolve, reject) => {
-    setTimeout(() => {
       if (username === "admin" && password === "123") {
-        resolve({
-          data: {
-            access_token: "82jdu82193yh90sad83hxfgsd"
-          },
-          message: "Login OK"
-        })
+        const ENDPOINT = "http://localhost:3001/login"; // FIXME: Remove this harcoding stuff, is a temporary poc
+        resolve(axios.get(ENDPOINT))
       } else {
         reject(new Error("Login ERROR"))
       }
-    }, 100)
   })

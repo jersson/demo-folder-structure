@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.21.1",
     "bootstrap": "5.0.0-alpha1",
     "immer": "^7.0.14",
     "react": "^17.0.1",
@@ -47,8 +48,8 @@
     "lint": "eslint --ext js,jsx,ts,tsx src/",
     "lint:fix": "eslint --fix --ext js,jsx,ts,tsx src/",
     "prettier": "prettier --check \"src/**/(*.tsx|*.ts|*.jsx|*.js|*.scss|*.css)\"",
-    "prettier:fix": "prettier --write \"src/**/(*.tsx|*.ts|*.jsx|*.js|*.scss|*.css)\"", 
-    "json-server": "json-server --watch \"src/apis/mock.api.json\" --port 3001", 
+    "prettier:fix": "prettier --write \"src/**/(*.tsx|*.ts|*.jsx|*.js|*.scss|*.css)\"",
+    "json-server": "json-server --watch \"src/apis/mock.api.json\" --port 3001",
     "local": "concurrently \"npm start\" \"npm run json-server\""
   },
   "eslintConfig": {

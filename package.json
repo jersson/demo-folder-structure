@@ -30,14 +30,16 @@
     "@types/redux": "^3.6.31",
     "@types/redux-thunk": "^2.1.32",
     "@types/styled-components": "^5.1.4",
+    "concurrently": "^6.0.2",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-prettier": "^3.1.4",
     "husky": "^4.3.7",
+    "json-server": "^0.16.3",
     "node-sass": "^4.14.1",
     "prettier": "^2.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start --watchAll=false",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:ci": "react-scripts test --watchAll=false --passWithNoTests",
@@ -45,7 +47,9 @@
     "lint": "eslint --ext js,jsx,ts,tsx src/",
     "lint:fix": "eslint --fix --ext js,jsx,ts,tsx src/",
     "prettier": "prettier --check \"src/**/(*.tsx|*.ts|*.jsx|*.js|*.scss|*.css)\"",
-    "prettier:fix": "prettier --write \"src/**/(*.tsx|*.ts|*.jsx|*.js|*.scss|*.css)\""
+    "prettier:fix": "prettier --write \"src/**/(*.tsx|*.ts|*.jsx|*.js|*.scss|*.css)\"", 
+    "json-server": "json-server --watch \"src/apis/mock.api.json\" --port 3001", 
+    "local": "concurrently \"npm start\" \"npm run json-server\""
   },
   "eslintConfig": {
     "extends": "react-app"

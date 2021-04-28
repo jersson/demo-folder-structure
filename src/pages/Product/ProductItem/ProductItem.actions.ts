@@ -4,7 +4,7 @@ export const getProductItemRequested = () => ({
   type: types.GET_PRODUCT_ITEM_REQUESTED
 })
 
-export const getProductItemSuccess = (payload: ResGetProductItemApi) => ({
+export const getProductItemSuccess = (payload: ResGetProductItemApi | null) => ({
   type: types.GET_PRODUCT_ITEM_SUCCESS,
   payload
 })

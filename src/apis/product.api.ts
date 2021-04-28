@@ -1,55 +1,25 @@
-const mockProducts = [
-  {
-    id: "1",
-    name: "Iphone",
-    quantity: 100,
-    price: 1999
-  },
-  {
-    id: "2",
-    name: "Samsung",
-    quantity: 90,
-    price: 999
-  },
-  {
-    id: "3",
-    name: "Nokia",
-    quantity: 80,
-    price: 899
-  },
-  {
-    id: "4",
-    name: "Sony",
-    quantity: 70,
-    price: 799
-  }
-]
+import axios from 'axios';
 
-export const getProductListApi = (): Promise<ResGetProductApi> =>
-  new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve({
-        data: {
-          products: mockProducts
-        },
-        message: "Products Service OK"
-      })
-    }, 100)
-  })
+export const getProductListApi = (): Promise<ResGetProductApi> => {
+  const ENDPOINT = "http://localhost:3001/products"; // FIXME: Remove this harcoding stuff, is a temporary poc
 
-export const getProductItemApi = (id: string): Promise<ResGetProductItemApi> =>
-  new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const product = mockProducts.find(product => product.id === id)
-      if (product) {
-        resolve({
-          data: {
-            product
-          },
+  return axios.get(ENDPOINT)
+          .then(res => res.data);
+}
+
+export const getProductItemApi = (id: string): Promise<ResGetProductItemApi | null> => {
+  return getProductListApi()
+    .then(res => {
+      let result:ResGetProductItemApi | null = null;
+      let item = res.data.products.find((p => p.id === id));
+
+      if (item){
+        result = {
+          data: {product: item}, 
           message: "Product Item OK"
-        })
-      } else {
-        reject(new Error("Product Item Error"))
+        }
       }
-    }, 100)
-  })
+
+      return result;
+    });
+}

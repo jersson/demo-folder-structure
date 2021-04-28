@@ -1,9 +1,38 @@
 {
-    "login":
+  "login": {
+    "data": {
+      "access_token": "82jdu82193yh90sad83hxfgsd"
+    },
+    "message": "OK"
+  },
+  "products": {
+    "data": {
+      "products": [
         {
-            "data": {
-                "access_token": "82jdu82193yh90sad83hxfgsd"
-            }, 
-            "message": "OK"
+          "id": "1",
+          "name": "Iphone",
+          "quantity": 100,
+          "price": 1999
+        },
+        {
+          "id": "2",
+          "name": "Samsung",
+          "quantity": 90,
+          "price": 999
+        },
+        {
+          "id": "3",
+          "name": "Nokia",
+          "quantity": 80,
+          "price": 899
+        },
+        {
+          "id": "4",
+          "name": "Sony",
+          "quantity": 70,
+          "price": 799
         }
+      ]
+    } 
+  }
 }

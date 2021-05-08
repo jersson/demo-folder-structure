@@ -9,13 +9,15 @@ import { store } from "./store/store"
 import { Server } from "miragejs";
 import { getMockLogin } from "../src/proxy/mock.api";
 
-new Server({
-  routes() {
-    this.namespace = "proxy";
-
-    this.get("/login", () => getMockLogin())
-  }
-});
+if (process.env.REACT_APP_MODE == "local"){
+  new Server({
+    routes() {
+      this.namespace = "proxy";
+  
+      this.get("/login", () => getMockLogin())
+    }
+  });  
+}
 
 
 ReactDOM.render(

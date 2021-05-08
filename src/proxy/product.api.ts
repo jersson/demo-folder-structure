@@ -1,7 +1,9 @@
 import axios from 'axios';
+const { REACT_APP_API_URI } = process.env;
+
 
 export const getProductListApi = (): Promise<ResGetProductApi> => {
-  const ENDPOINT = "http://localhost:3001/products"; // FIXME: Remove this harcoding stuff, is a temporary poc
+  const ENDPOINT = `${ REACT_APP_API_URI }/proxy/products`; // FIXME: Remove this harcoding stuff, is a temporary poc
 
   return axios.get(ENDPOINT)
           .then(res => res.data);

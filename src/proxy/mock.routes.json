@@ -1,0 +1,4 @@
+{
+    "/proxy/login": "/login", 
+    "/proxy/products": "/products"
+}

@@ -51,7 +51,7 @@
     "prettier": "prettier --check \"src/**/(*.tsx|*.ts|*.jsx|*.js|*.scss|*.css)\"",
     "prettier:fix": "prettier --write \"src/**/(*.tsx|*.ts|*.jsx|*.js|*.scss|*.css)\"",
     "json-server": "json-server --watch \"src/proxy/mock.api.json\" --routes \"src/proxy/mock.routes.json\" --port 3001",
-    "local": "concurrently \"npm start\" \"npm run json-server\""
+    "local": "REACT_APP_MODE=\"dev\" concurrently \"npm start\" \"npm run json-server\""
   },
   "eslintConfig": {
     "extends": "react-app"

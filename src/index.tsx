@@ -6,6 +6,18 @@ import * as serviceWorker from "./serviceWorker"
 import { Provider } from "react-redux"
 import { store } from "./store/store"
 
+import { Server } from "miragejs";
+import { getMockLogin } from "../src/proxy/mock.api";
+
+new Server({
+  routes() {
+    this.namespace = "proxy";
+
+    this.get("/login", () => getMockLogin())
+  }
+});
+
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

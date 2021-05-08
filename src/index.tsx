@@ -7,14 +7,15 @@ import { Provider } from "react-redux"
 import { store } from "./store/store"
 
 import { Server } from "miragejs";
-import { getMockLogin } from "../src/proxy/mock.api";
+import { getMockLogin, getMockProducts } from "../src/proxy/mock.api";
 
-if (process.env.REACT_APP_MODE == "local"){
+if (process.env.REACT_APP_MODE === "local"){
   new Server({
     routes() {
       this.namespace = "proxy";
   
       this.get("/login", () => getMockLogin())
+      this.get("/products", () => getMockProducts())
     }
   });  
 }

@@ -1,5 +1,5 @@
 import * as actions from "./ProductList.actions"
-import { getProductListApi } from "src/apis/product.api"
+import { getProductListApi } from "src/proxy/product.api"
 
 export const getProductList = () => dispatch => {
   dispatch(actions.getProductListRequested())

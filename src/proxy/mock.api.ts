@@ -1,10 +1,10 @@
 export const getMockLogin = () => {
   return {
     data: {
-      access_token: "82jdu82193yh90sad83hxfgsd"
-    }
-  }
-}
+      accessToken: "82jdu82193yh90sad83hxfgsd",
+    },
+  };
+};
 
 export const getMockProducts = () => {
   return {
@@ -14,15 +14,15 @@ export const getMockProducts = () => {
           id: "1",
           name: "Iphone",
           quantity: 100,
-          price: 1999
+          price: 1999,
         },
         {
           id: "2",
           name: "Samsung",
           quantity: 90,
-          price: 999
-        }
-      ]
-    }
-  }
-}
+          price: 999,
+        },
+      ],
+    },
+  };
+};

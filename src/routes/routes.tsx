@@ -1,8 +1,8 @@
-import React from "react"
-import { BrowserRouter } from "react-router-dom"
-import ProductRoutes from "./ProductRoutes"
-import LoginRoutes from "./LoginRoutes"
-import HomeRoutes from "./HomeRoutes"
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import ProductRoutes from "./ProductRoutes";
+import LoginRoutes from "./LoginRoutes";
+import HomeRoutes from "./HomeRoutes";
 
 export default function Routes() {
   return (
@@ -11,5 +11,5 @@ export default function Routes() {
       <ProductRoutes />
       <LoginRoutes />
     </BrowserRouter>
-  )
+  );
 }

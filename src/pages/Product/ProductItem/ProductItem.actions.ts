@@ -1,15 +1,15 @@
-import * as types from "./ProductItem.constants"
+import * as types from "./ProductItem.constants";
 
 export const getProductItemRequested = () => ({
-  type: types.GET_PRODUCT_ITEM_REQUESTED
-})
+  type: types.GET_PRODUCT_ITEM_REQUESTED,
+});
 
 export const getProductItemSuccess = (payload: ResGetProductItemApi | null) => ({
   type: types.GET_PRODUCT_ITEM_SUCCESS,
-  payload
-})
+  payload,
+});
 
-export const getProductItemFailed = payload => ({
+export const getProductItemFailed = (payload) => ({
   type: types.GET_PRODUCT_ITEM_FAILED,
-  payload
-})
+  payload,
+});

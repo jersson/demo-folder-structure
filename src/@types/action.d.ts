@@ -1,4 +1,4 @@
 interface ActionRedux {
-  types: string
-  payload?: any
+  types: string;
+  payload?: any;
 }

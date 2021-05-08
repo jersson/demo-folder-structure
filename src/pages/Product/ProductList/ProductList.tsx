@@ -1,29 +1,29 @@
-import React, { useEffect } from "react"
-import { connect, ConnectedProps } from "react-redux"
-import MainLayout from "src/layouts/MainLayout"
-import { getProductList } from "./ProductList.thunks"
-import { Link } from "react-router-dom"
-import { PATH } from "src/constants/paths"
-import { handlePrice } from "src/helpers/string"
-import { TableContainer } from "./ProductList.styles"
+import React, { useEffect } from "react";
+import { connect, ConnectedProps } from "react-redux";
+import MainLayout from "src/layouts/MainLayout";
+import { getProductList } from "./ProductList.thunks";
+import { Link } from "react-router-dom";
+import { PATH } from "src/constants/paths";
+import { handlePrice } from "src/helpers/string";
+import { TableContainer } from "./ProductList.styles";
 
 const mapStateToProps = (state: AppState) => ({
-  productList: state.productList.productList
-})
+  productList: state.productList.productList,
+});
 
 const mapDispatchToProps = {
-  getProductList
-}
+  getProductList,
+};
 
-const connector = connect(mapStateToProps, mapDispatchToProps)
+const connector = connect(mapStateToProps, mapDispatchToProps);
 
 interface Props extends ConnectedProps<typeof connector> {}
 const ProductList = (props: Props) => {
-  const { getProductList, productList } = props
+  const { getProductList, productList } = props;
 
   useEffect(() => {
-    getProductList()
-  }, [getProductList])
+    getProductList();
+  }, [getProductList]);
 
   return (
     <MainLayout>
@@ -47,10 +47,7 @@ const ProductList = (props: Props) => {
                 <td>{product.quantity}</td>
                 <td>{handlePrice(product.price)}</td>
                 <td>
-                  <Link
-                    className="btn btn-primary"
-                    to={PATH.PRODUCT + `/${product.id}`}
-                  >
+                  <Link className="btn btn-primary" to={PATH.PRODUCT + `/${product.id}`}>
                     Detail
                   </Link>
                 </td>
@@ -60,7 +57,7 @@ const ProductList = (props: Props) => {
         </table>
       </TableContainer>
     </MainLayout>
-  )
-}
+  );
+};
 
-export default connector(ProductList)
+export default connector(ProductList);

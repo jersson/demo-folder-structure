@@ -1,11 +1,11 @@
 interface ReqLogin {
-  username: string
-  password: string
+  username: string;
+  password: string;
 }
 interface ResLoginApi extends Res {
   data: {
-    access_token: string
-  }
+    accessToken: string;
+  };
 }
 
 interface ResLogin extends ActionRedux {}

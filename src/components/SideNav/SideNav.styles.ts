@@ -1,9 +1,9 @@
-import styled from "styled-components"
-import { BREAKPOINT, COLOR } from "src/constants/styles"
+import styled from "styled-components";
+import { BREAKPOINT, COLOR } from "src/constants/styles";
 
 export const Footer = styled.div`
   padding: 0 30px;
-`
+`;
 
 export const Menu = styled.ul`
   padding: 0;
@@ -28,7 +28,7 @@ export const Menu = styled.ul`
       }
     }
   }
-`
+`;
 
 export const Nav = styled.nav`
   min-width: 270px;
@@ -65,7 +65,7 @@ export const Nav = styled.nav`
       margin-left: -80px;
     }
   }
-`
+`;
 
 export const Logo = styled.a`
   display: block;
@@ -73,4 +73,4 @@ export const Logo = styled.a`
   font-weight: 750;
   padding: 10px 30px;
   transition: 0.3s;
-`
+`;

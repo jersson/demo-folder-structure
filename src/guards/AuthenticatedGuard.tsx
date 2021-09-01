@@ -1,38 +1,33 @@
-import React from "react"
-import {
-  Route,
-  RouteProps,
-  Redirect,
-  RouteComponentProps
-} from "react-router-dom"
-import { connect } from "react-redux"
+import React from "react";
+import { Route, RouteProps, Redirect, RouteComponentProps } from "react-router-dom";
+import { connect } from "react-redux";
 
 interface ReduxProps {
-  isAuthenticated: boolean
+  isAuthenticated: boolean;
 }
 interface Props extends ReduxProps, RouteProps {
-  component: React.ComponentType<RouteComponentProps>
+  component: React.ComponentType<RouteComponentProps>;
 }
 
 function AuthenticatedGuard(props: Props) {
-  const { isAuthenticated, component: Component, ...rest } = props
+  const { isAuthenticated, component: Component, ...rest } = props;
   return (
     <Route
       {...rest}
-      render={props => {
+      render={(props) => {
         if (!isAuthenticated && !localStorage.getItem("token")) {
-          return <Redirect to="/login" />
+          return <Redirect to="/login" />;
         }
-        return <Component {...props} />
+        return <Component {...props} />;
       }}
     />
-  )
+  );
 }
 
-const mapStateToProps = state => ({
-  isAuthenticated: state.app.isAuthenticated
-})
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.app.isAuthenticated,
+});
 
-const mapDispatchToProps = {}
+const mapDispatchToProps = {};
 
-export default connect(mapStateToProps, mapDispatchToProps)(AuthenticatedGuard)
+export default connect(mapStateToProps, mapDispatchToProps)(AuthenticatedGuard);

@@ -1,23 +1,23 @@
-import React from "react"
-import { NavLink } from "react-router-dom"
-import { Footer, Logo, Menu, Nav } from "./SideNav.styles"
-import { PATH } from "src/constants/paths"
-import home from "src/assets/images/home.svg"
-import list from "src/assets/images/list.svg"
-import { connect, ConnectedProps } from "react-redux"
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { Footer, Logo, Menu, Nav } from "./SideNav.styles";
+import { PATH } from "src/constants/paths";
+import home from "src/assets/images/home.svg";
+import list from "src/assets/images/list.svg";
+import { connect, ConnectedProps } from "react-redux";
 
-const mapStateToProps = state => ({
-  closeSideNav: state.app.closeSideNav
-})
+const mapStateToProps = (state) => ({
+  closeSideNav: state.app.closeSideNav,
+});
 
-const mapDispatchToProps = {}
+const mapDispatchToProps = {};
 
-const connector = connect(mapStateToProps, mapDispatchToProps)
+const connector = connect(mapStateToProps, mapDispatchToProps);
 
 interface Props extends ConnectedProps<typeof connector> {}
 
 function SideNav(props: Props) {
-  const { closeSideNav } = props
+  const { closeSideNav } = props;
   return (
     <Nav className={closeSideNav ? "close" : ""}>
       <h1>
@@ -46,8 +46,7 @@ function SideNav(props: Props) {
       </Menu>
       <Footer>
         <p>
-          Copyright ©{new Date().getFullYear()} All rights reserved | This
-          template is made with by
+          Copyright ©{new Date().getFullYear()} All rights reserved | This template is made with by
           <a
             href="https://google.com/"
             target="_blank"
@@ -59,7 +58,7 @@ function SideNav(props: Props) {
         </p>
       </Footer>
     </Nav>
-  )
+  );
 }
 
-export default connector(SideNav)
+export default connector(SideNav);

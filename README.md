@@ -5,19 +5,16 @@ $ npm install
 
 ## .env file used locally
 ```
-REACT_APP_MODE=local
-REACT_APP_API_URI=http://localhost:3000
+REACT_APP_API_URI=
 ```
 You can use the `env.example` file to make your own copy :)
 
 ## How to run the code on your local environment
 ```
-$ npm run start:local
+$ npm run start
 ```
 
-## How to simulate a development environment
-```
-$ npm run start:dev
+
 ```
 ## Login
 

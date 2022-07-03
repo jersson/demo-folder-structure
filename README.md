@@ -11,7 +11,7 @@ You can use the `env.example` file to make your own copy :)
 
 ## How to run the code on your local environment
 ```
-$ npm run start
+$ npm start
 ```
 
 

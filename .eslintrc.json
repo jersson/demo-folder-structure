@@ -19,6 +19,7 @@
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
     "quotes": "off",
+    "no-console": "warn",
     "object-curly-spacing": "off",
     "semi": "error",
     "require-jsdoc": "off",
